@@ -14,9 +14,9 @@ const PostSchema = new Schema(
 			long : { type : String, required : true }
 		},
 		meta : {
-			creationDate : { type : Date, default : Date.now, required : true },
-			modificationDate : { type : Date, default : Date.now, required : true },
-			isDisabled : { type : Boolean, default : false }
+			creationDate : { type : Date, default : () => new Date(), required : true },
+			modificationDate : { type : Date, default : () => new Date(), required : true },
+			isDisabled : { type : String, default : false }
 		}
 	}
 );
