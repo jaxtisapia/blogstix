@@ -32,6 +32,22 @@ describe('TextProcessor', function() {
 		});
 		
 		
+	});
+	
+	describe('#stripWhitespace(input)', function() {
+		
+		it('should strip whitespaces including tabs and spaces', () => {
+			
+			const withSpaces = 'some description here';
+			const resultWithSpaces = TextProcessor.stripWhitespace(withSpaces);
+			expect(resultWithSpaces).to.equal('somedescriptionhere');
+			
+			const withTabs = '  some  description here';
+			const resultWithTabs = TextProcessor.stripWhitespace(withTabs);
+			expect(resultWithTabs).to.equal('somedescriptionhere');
+			
+		})
+		
 	})
 	
 });

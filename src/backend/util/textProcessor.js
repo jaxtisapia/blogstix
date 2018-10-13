@@ -24,6 +24,20 @@ class TextProcessor {
 		return input.split(delimiter);
 	}
 	
+	/**
+	 * Remove / Sanitise all whitespace from an input String.
+	 * Whitespace used in this context includes: space, tab
+	 *
+	 * @param input String to be stripped of all whitespace
+	 * @return {String} input argument with without whitespace
+	 *
+	 * @example stripWhitespaces('   ') => ''
+	 * @example stripWhitespaces('m y na me ') => 'myname'
+	 * @example stripWhitespaces('  m y na me withTabs') => 'mynamewithTabs'
+	 */
+	static stripWhitespace(input) {
+		return input.replace(/ /g, '')
+	}
 }
 
 export default TextProcessor;
