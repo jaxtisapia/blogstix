@@ -4,7 +4,7 @@ node_js:
   - '6'
 script:
   # Only test backend for now, ui tests to be done later
-  - test:backend
+  - npm run test:backend
 branches:
   only:
     - master
