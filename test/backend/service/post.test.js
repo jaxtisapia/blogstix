@@ -144,7 +144,9 @@ describe('PostCreator', function() {
 
 describe('PostQuery', function() {
 	
-	const lowDBConnector = new LowDBConnector({ uri : 'src/backend/database/db.test.json' });
+	const databaseLocation = 'src/backend/database/db.test.json';
+	
+	const lowDBConnector = new LowDBConnector({ uri : databaseLocation });
 	const database = new Database(lowDBConnector);
 	
 	const postQuery = new PostQuery(database);
@@ -250,6 +252,36 @@ describe('PostQuery', function() {
 			expect(thirdPosts).to.not.deep.equal(fourthPosts);
 		});
 		
-	})
+	});
+	
+	describe('#getCount()', function() {
+		const expectedNumberOfPostsInTestDatabase = 4;
+		
+		const countOfPosts = postQuery.getCount();
+		expect(countOfPosts).to.equal(expectedNumberOfPostsInTestDatabase);
+	});
+	
+	describe('#setDatabase(database)', function() {
+		
+		//	Strategy
+		// ***************************************************************
+		// 1. Use this test after all other primary tests are done.
+		// By this we get a standard to measure our new database instance.
+		//
+		// 2. Since we currently have just one database type,
+		// we rather setDatabase() to the database instance we were using already.
+		//
+		// 3. Get Count of posts, which is expected to be same as the 'getCount' test above this test
+		
+		const anotherLowDBConnector = new LowDBConnector({ uri : databaseLocation });
+		database.setDatabase(anotherLowDBConnector);
+		
+		postQuery.setDatabase(database);
+		
+		const expectedNumberOfPostsInTestDatabase = 4;
+		const countOfPosts = postQuery.getCount();
+		
+		expect(countOfPosts).to.equal(expectedNumberOfPostsInTestDatabase);
+	});
 	
 });
