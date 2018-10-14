@@ -1,4 +1,7 @@
 import PostContentService from './content.post';
-import PostService from './post';
 
-export { PostService, PostContentService };
+import DatabaseService from './database'
+import PostCreator from './post.creator';
+import PostQuery from './post.query';
+
+export { PostCreator, PostQuery, PostContentService, DatabaseService };
