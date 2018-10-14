@@ -1,9 +1,6 @@
 # Projects To-Do
 These Todos are prioritised by arrangement and precedence
 
-- [] Write initial tests for the following services:
-    - PostService: Handles all activities of a post/blog
-
 - [] Include Test Coverage istanbul to project when at least few backend classes
 are stable
 
@@ -18,3 +15,6 @@ are stable
     - [] Mobile View Third
         
 - [] Get a separate TODO.md and link from this project
+
+- [X] Write initial tests for the following services:
+    - PostService: Handles all activities of a post/blog
