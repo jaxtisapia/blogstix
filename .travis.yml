@@ -1,0 +1,10 @@
+language: node_js
+node_js:
+  - '8'
+  - '6'
+script:
+  # Only test backend for now, ui tests to be done later
+  - test:backend
+branches:
+  only:
+    - master
