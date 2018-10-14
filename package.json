@@ -20,8 +20,11 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
+    "test": "npm run test:frontend && npm run test:backend",
+    "test:frontend": "jest src/frontend",
+    "test:frontend:update": "npm run test:frontend -- -u",
     "test:backend": "nyc mocha --require babel-core/register --recursive ./test/backend",
+    "test:backend:watch": "npm run test:backend -- -w",
     "eject": "react-scripts eject"
   },
   "devDependencies": {
