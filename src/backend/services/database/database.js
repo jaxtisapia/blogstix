@@ -42,8 +42,14 @@ class Database {
 		return this.database.findRecentPosts({ page, limit })
 	}
 	
-	findRandom({ page = this.defaultPage, limit = this.defaultLimit }) {
-		return this.database.findRandom({ page, limit })
+	findRandomPosts({ page = this.defaultPage, limit = this.defaultLimit }) {
+		return this.database.findRandomPosts({ page, limit })
+	}
+	
+	getPostsCount() {
+		return this.database.getPostsCount();
 	}
 	
 }
+
+export default Database;
