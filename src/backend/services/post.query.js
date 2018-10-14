@@ -19,7 +19,17 @@ class PostQuery {
 		this.defaultLimit = 20;
 	}
 	
-	getCount(id) {
+	/**
+	 * Set another different instance of database to use for the Query
+	 * Allow dynamic and runtime attachment to another database instance
+	 *
+	 * @param database - Database instance to use for querying activities
+	 */
+	setDatabase(database){
+		this.database = database;
+	}
+	
+	getCount() {
 		return this.database.getPostsCount();
 	}
 	
