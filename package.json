@@ -3,6 +3,12 @@
   "description": "Blog WebApp for Jaxtis Apia <www.jaxtis.com>",
   "version": "1.0.0",
   "private": true,
+  "jest": {
+    "moduleNameMapper": {
+      "replace":{},
+      "\\.(css|less|sass|scss)$": "<rootDir>/__mocks__/styleMock.js"
+    }
+  },
   "dependencies": {
     "lowdb": "^1.0.0",
     "react": "^16.5.2",
