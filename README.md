@@ -1,12 +1,15 @@
 ## Project Mock-ups
 
 1. Main menu (Desktop)
+
 ![main](https://user-images.githubusercontent.com/32112641/46917773-3384ad80-cfba-11e8-873c-c606e215d0ce.jpg)
 
 2. Main menu (Mobile)
+
 ![main-mobile](https://user-images.githubusercontent.com/32112641/46917768-210a7400-cfba-11e8-8398-b0a72506dd2d.jpg)
 
 3. Main menu (Mobile) : Menu Expanded
+
 ![main-mobile-menu-open](https://user-images.githubusercontent.com/32112641/46917739-d5f06100-cfb9-11e8-984e-f545eb5f7507.jpg)
 
 
