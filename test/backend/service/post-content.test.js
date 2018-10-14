@@ -137,6 +137,32 @@ describe('PostContentService', function() {
 			
 		});
 		
+		describe('invalid type', function() {
+			
+			it('should NOT create a postContent with an invalid type supplied', () => {
+				
+				const rawDescription = 'invalid-type||Some description here';
+				const postContent = PostContentService.create(rawDescription);
+				
+				const { link, type, text } = postContent;
+				expect(link).to.be.null;
+				expect(text).to.be.null;
+				expect(type).to.be.null;
+			});
+			
+			it('should create a simple -text- postContent with valid description', () => {
+				
+				const rawDescription = 'text||Some description here';
+				const postContent = PostContentService.create(rawDescription);
+				
+				const { link, type, text } = postContent;
+				expect(link).to.be.null;
+				expect(text).to.equal('Some description here');
+				expect(type).to.equal('text');
+			});
+			
+		});
+		
 	});
 	
 });
